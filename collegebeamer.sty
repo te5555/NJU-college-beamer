@@ -33,7 +33,12 @@
 \newcommand{\colorlogoPath}{src/PolyU/color-logo.png}
 \newcommand{\translogoPath}{src/PolyU/trans-logo.png}
 \newcommand{\backgroundPath}{src/PolyU/background.png}
-
+\DeclareOption{nju}{
+  \renewcommand{\maincolorRGB}{106, 0, 95}  % the theme's main color in RGB
+  \renewcommand{\colorlogoPath}{src/nju/color-logo.png}  % path to the logo image with background color
+  \renewcommand{\translogoPath}{src/nju/trans-logo.png}  % path to the logo image with transparent background
+  \renewcommand{\backgroundPath}{src/nju/background.png}  % path to the background image
+}
 \DeclareOption{polyu}{
     \renewcommand{\maincolorRGB}{128, 57, 61}
     \renewcommand{\colorlogoPath}{src/PolyU/color-logo.png}

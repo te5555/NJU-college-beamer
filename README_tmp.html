@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="nju-beamer">NJU-beamer</h1>
+<p>这是一个NJU的beamer模板。此模板基于<a href="https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx">SINTEF Presentation</a>。</p>
+<p>由于没有很好的背景图，这个模板可能并不是很好看。欢迎大家一起改进。</p>
+<p>这是我的第一个github项目，我并不熟悉git操作，欢迎批评指正。</p>
+<h1 id="%E5%8E%9Freadme%E6%96%87%E6%A1%A3">原readme文档</h1>
+<p>Hi👋 Here are some beamer templates which are secondary creations of <a href="https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx">SINTEF Presentation</a> template. Thanks <a href="federico.zenith@sintef.no">Federico Zenith</a> for creating such well-designed works. To use it in my and my friends' schools/institutes, I rewrote and added some icons and features to adapt to specific surroundings✨.</p>
+<h2 id="colleges--institutes">Colleges &amp; institutes</h2>
+<ul>
+<li>The Hong Kong Polytechnic University<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/PolyU.png?raw=true" alt="PolyU"></li>
+<li>Southwest University<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/SWU.png?raw=true" alt="SWU"></li>
+<li>Shenzhen University<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/SZU.png?raw=true" alt="SZU"></li>
+<li>Shenzhen Academic of Environmental Science<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/SAES.png?raw=true" alt="SAES"></li>
+<li>Harbin Institute of Technology<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/HIT.png?raw=true" alt="HIT">
+<blockquote>
+<p>Thank <a href="https://github.com/LeeWlving">LeeWlving</a> for contributing this template!</p>
+</blockquote>
+</li>
+<li>Zhejiang A&amp;F University<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/ZAFU.png?raw=true" alt="ZAFU">
+<blockquote>
+<p>Thank <a href="https://github.com/ke1ewang">ke1ewang</a> for contributing this template!</p>
+</blockquote>
+</li>
+</ul>
+<p>Some of these templates have been submitted to <a href="https://cs.overleaf.com/gallery">Overleaf</a>, please check them here👇</p>
+<ul>
+<li><a href="https://www.overleaf.com/latex/templates/the-honk-kong-polytechnic-university-polyu-beamer-presentation-theme/vywngqprjwrq">The Honk Kong Polytechnic University (PolyU) Beamer Presentation Theme</a></li>
+<li><a href="https://www.overleaf.com/latex/templates/xi-nan-da-xue-swu-beamer-mo-ban-zhu-ti/bgprxfbyhqsb">西南大学 SWU Beamer 模板</a></li>
+<li><a href="https://www.overleaf.com/latex/templates/shen-zhen-da-xue-szu-beamer-mo-ban/bjwzmkpsgygf">深圳大学 SZU Beamer 模板</a></li>
+<li><a href="https://www.overleaf.com/latex/templates/shen-zhen-huan-jing-ke-xue-yuan-saes-beamer-zhu-ti/gqfgpdwcrcpt">深圳环境科学院 SAES Beamer 模版</a></li>
+<li><a href="https://www.overleaf.com/latex/templates/harbin-institute-of-technology-hit-beamer-presentation-theme/prwxqwfdzkqj">哈尔滨工业大学 Beamer 模版</a></li>
+<li><a href="https://www.overleaf.com/latex/templates/zafu-beamer-theme-beta/rcxzphbhnddf">浙江农林大学 ZAFU Beamer 模版</a></li>
+</ul>
+<h2 id="options--usage">Options &amp; usage</h2>
+<h3 id="switch-collegeinstitute">Switch college/institute</h3>
+<p>Switching between different college/institute is quite easy, just add college/institute name (all lower case) to the <code>collegeBeamer</code> package. For example, to switch to the PolyU theme, add <code>polyu</code> to the package:</p>
+<pre class="hljs"><code><div>\usepackage[polyu,en]{collegeBeamer}
+</div></code></pre>
+<h3 id="switch-language">Switch language</h3>
+<p>To switch the language, just change the language option in the <code>collegeBeamer</code> package. For example, to switch to the Chinese language, add <code>zh</code> to the package:</p>
+<pre class="hljs"><code><div>\usepackage[szu,zh]{collegeBeamer}
+</div></code></pre>
+<blockquote>
+<p>When select <code>zh</code>, please add the <code>xeCJK</code>package to the preamble and use <a href="https://www.overleaf.com/learn/latex/XeLaTeX">XeLaTeX</a> as the typesetting engine.</p>
+</blockquote>
+<pre class="hljs"><code><div>\usepackage{xeCJK}
+</div></code></pre>
+<h3 id="page-elements">Page elements</h3>
+<ul>
+<li>
+<p>Table of Contents</p>
+<p>At the beginning of each section, the table of contents will be shown with the current chapter highlighted.<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/table%20of%20contents.png?raw=true" alt="toc"></p>
+</li>
+<li>
+<p>Sub-section page<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/subsection.png?raw=true" alt="ssec"></p>
+</li>
+<li>
+<p>Math equation<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/math.png?raw=true" alt="math"></p>
+</li>
+<li>
+<p>Code block<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/code.png?raw=true" alt="code"></p>
+</li>
+<li>
+<p>End page<br>
+<img src="https://github.com/liu-qilong/college-beamer/blob/main/gallery/end.png?raw=true" alt="end"></p>
+</li>
+</ul>
+<h2 id="add-your-own-college">Add your own college?</h2>
+<p>Would like to make your own theme on top of these themes? It's quite easy, only a few steps are needed:</p>
+<h3 id="step-1-get-the-files">Step 1: Get the files</h3>
+<p>To get the files, you can fork &amp; clone the repository to your computer.</p>
+<p>Alternatively, you can open the templates' Overleaf webpages and click <code>Open as Template</code>.</p>
+<h3 id="step-2-place-logos-and-background">Step 2: Place logos and background</h3>
+<p>Create a subfolder under <code>src/</code> named as your college. Place <code>color-logo.png</code> (logo image with background color), <code>trans-logo.png</code> (logo image with transparent background), and <code>background.png</code> (background image on the cover page) into it.</p>
+<h3 id="step-3-add-collegeinstitute-option">Step 3: Add college/institute option</h3>
+<p>Starting from the 37-th line of <code>collegebeamer.sty</code>, all college/institute options are defined. Add your college/institute name in the same format, e.g.:</p>
+<pre class="hljs"><code><div>\DeclareOption{polyu}{
+  \renewcommand{\maincolorRGB}{128, 57, 61}  % the theme's main color in RGB
+  \renewcommand{\colorlogoPath}{src/PolyU/color-logo.png}  % path to the logo image with background color
+  \renewcommand{\translogoPath}{src/PolyU/trans-logo.png}  % path to the logo image with transparent background
+  \renewcommand{\backgroundPath}{src/PolyU/background.png}  % path to the background image
+}
+</div></code></pre>
+<p>Noted that the theme's main color will be used in the front-ground of titles and background colors of the sectional page.</p>
+<blockquote>
+<p><em>P.S. You may also choose to use a logo with white background for <code>\translogoPath</code>. Please refer to <a href="https://github.com/liu-qilong/college-beamer/issues/8">issue #8</a> for considerations.</em></p>
+</blockquote>
+<p>Now you have your brand new template 👏🎉</p>
+<h2 id="issues--suggestions">Issues &amp; suggestions</h2>
+<p>If you have any revision suggestions, please create an issue in this repository. Thanks indeed🤝</p>
+
+</body>
+</html>

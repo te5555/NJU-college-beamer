@@ -1,5 +1,11 @@
-# `college-beamer`
+# NJU-beamer
+这是一个NJU的beamer模板。此模板基于[SINTEF Presentation](https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx)。
 
+由于没有很好的背景图，这个模板可能并不是很好看。欢迎大家一起改进。
+
+这是我的第一个github项目，我并不熟悉git操作，欢迎批评指正。
+
+# 原readme文档 
 Hi👋 Here are some beamer templates which are secondary creations of [SINTEF Presentation](https://www.overleaf.com/latex/templates/sintef-presentation/jhbhdffczpnx) template. Thanks [Federico Zenith](federico.zenith@sintef.no) for creating such well-designed works. To use it in my and my friends' schools/institutes, I rewrote and added some icons and features to adapt to specific surroundings✨.
 
 ## Colleges & institutes
